@@ -32,6 +32,9 @@
 $ npm install
 ```
 
+install mysql server and update sqlconfig in appmodule if required
+this project was tried on XAMPP
+
 ## Running the app
 
 ```bash

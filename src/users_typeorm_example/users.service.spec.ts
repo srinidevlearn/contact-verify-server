@@ -60,7 +60,7 @@ describe('UserService', () => {
         service.create({
           firstName: 'firstName #1',
           lastName: 'lastName #1',
-        }),
+        })
       ).resolves.toEqual(oneUser);
     });
   });

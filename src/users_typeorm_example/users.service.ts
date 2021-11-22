@@ -8,13 +8,20 @@ import { User } from './user.entity';
 export class UsersService {
   constructor(
     @InjectRepository(User)
-    private readonly usersRepository: Repository<User>,
+    private readonly usersRepository: Repository<User>
   ) {}
 
   create(createUserDto: CreateUserDto): Promise<User> {
     const user = new User();
     user.firstName = createUserDto.firstName;
     user.lastName = createUserDto.lastName;
+    user.age = createUserDto.age;
+    user.gender = createUserDto.gender;
+    user.primaryMobileNumber = createUserDto.primaryMobileNumber;
+    user.primaryEmailId = createUserDto.primaryEmailId;
+    user.secondaryMobileNumber = createUserDto.secondaryMobileNumber;
+    user.secondaryEmailId = createUserDto.secondaryEmailId;
+    user.isActive = createUserDto.isActive;
 
     return this.usersRepository.save(user);
   }

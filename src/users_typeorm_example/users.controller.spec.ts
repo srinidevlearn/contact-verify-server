@@ -6,6 +6,13 @@ import { UsersService } from './users.service';
 const createUserDto: CreateUserDto = {
   firstName: 'firstName #1',
   lastName: 'lastName #1',
+  age: 10,
+  gender: 'Male',
+  primaryMobileNumber: '9087654321',
+  primaryEmailId: 'abc@gmail.com',
+  secondaryMobileNumber: '9087654321',
+  secondaryEmailId: 'abc@gmail.com',
+  isActive: false,
 };
 
 describe('UsersController', () => {
@@ -23,7 +30,7 @@ describe('UsersController', () => {
             create: jest
               .fn()
               .mockImplementation((user: CreateUserDto) =>
-                Promise.resolve({ id: '1', ...user }),
+                Promise.resolve({ id: '1', ...user })
               ),
             findAll: jest.fn().mockResolvedValue([
               {
@@ -40,7 +47,7 @@ describe('UsersController', () => {
                 firstName: 'firstName #1',
                 lastName: 'lastName #1',
                 id,
-              }),
+              })
             ),
             remove: jest.fn(),
           },
